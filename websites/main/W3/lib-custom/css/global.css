@@ -1,0 +1,52 @@
+hr {
+    margin-top:10px;
+    margin-bottom: 25px;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.navbar-brand {
+  padding: 0px; /* firefox bug fix */
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 15px; /* firefox bug fix */
+  width: auto;
+}
+
+.global-partial-container {
+    max-width: 900px;
+    margin:0 auto;
+}
+
+.panel-success {
+    border-color: #99ccb2;
+    background: #eaf4ef;
+    color:#396;
+}
+
+.status-panel {
+    margin-bottom:45px;
+}
+
+.information-panel {
+    margin-bottom:45px;
+}
+
+.status-history-panel {
+    margin-bottom:45px;
+}
+
+.status-message-good{
+    color: #396;
+}
+
+.status-message-minor{
+    color: #f29d50;
+}
+
+.status-message-major{
+    color: #c30;
+}

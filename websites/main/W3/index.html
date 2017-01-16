@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="statusApp">
+<head>
+    <title>Status Console</title>
+    <base href="/">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/lib-custom/css/global.css" />
+    <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script type="text/javascript" src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/lib-custom/js/app.js"></script>
+    <script type="text/javascript" src="/lib-custom/js/statusController.js"></script>
+    <script type="text/javascript" src="/lib-custom/js/metricsController.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="global-partial-container">
+            <div ng-if="enableNavBar">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="#">
+                                <img src="http://res.cloudinary.com/candidbusiness/image/upload/v1455406304/dispute-bills-chicago.png" >
+                            </a>
+                        </div>
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="/#/status">Status Stream</a></li>
+                            <li><a href="/#/metrics">Metrics Stream</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a><b>Last Updated</b> {{ lastUpdateDateTime }}</a></li>
+                        </ul>                        
+                    </div>
+                </nav>
+            </div>
+                <main ui-view=""></main>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
