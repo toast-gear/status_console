@@ -12,10 +12,7 @@
                     templateUrl: '/partials/metrics.html',
                     controller: 'metricsController as metricsController'
                 });
-
-            // injected $location provider into your route provider, setting html 5 mode to true gets rid of the '#?' in your URL
-            // we want false otherwise routing breaks
-            $locationProvider.html5Mode(false);
+            $locationProvider.html5Mode(true);
         })
         .config(['localStorageServiceProvider', function(localStorageServiceProvider) {
             localStorageServiceProvider

@@ -23,7 +23,10 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "website", "..\..\website\",
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "20894"
+		SlnRelativePath = "..\..\website\"
 	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "corev3", "..\corev3\corev3.xproj", "{8BAB708F-3DCC-46F2-BB97-951127032F6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +42,10 @@ Global
 		{349071C8-A585-41F9-9019-B2438166E881}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{349071C8-A585-41F9-9019-B2438166E881}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{349071C8-A585-41F9-9019-B2438166E881}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{8BAB708F-3DCC-46F2-BB97-951127032F6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BAB708F-3DCC-46F2-BB97-951127032F6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BAB708F-3DCC-46F2-BB97-951127032F6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BAB708F-3DCC-46F2-BB97-951127032F6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

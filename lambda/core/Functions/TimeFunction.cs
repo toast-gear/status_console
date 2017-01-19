@@ -11,18 +11,15 @@ using Amazon.Lambda.Serialization;
 
 namespace core
 {
-    public class Function
+    public class TimeFunctions
     {
-        
-        /// <summary>
-        /// A simple function that takes a string and does a ToUpper
-        /// </summary>
-        /// <param name="input"></param>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public string FunctionHandler(string input, ILambdaContext context)
+        public string GetLocalServerTime_Get(ILambdaContext context)
         {
-            return input?.ToUpper();
+            return DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+        }
+        public string Get_UTC_ServerTime_Get(ILambdaContext context)
+        {
+            return DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm");
         }
     }
 }
