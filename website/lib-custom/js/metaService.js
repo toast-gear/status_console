@@ -1,24 +1,24 @@
 ﻿(function () {
     angular
         .module('statusApp')
-        .service('timeService', timeService);
+        .service('metaService', metaService);
 
-    timeService.$inject = ['$http', '$log'];
+    metaService.$inject = ['$http', '$log'];
 
-    function timeService($http, $log) {
-        var timeService = {
+    function metaService($http, $log) {
+        var metaService = {
             testService: testService,
             getLastStreamUpdateTime: getLastStreamUpdateTime
         };
 
-        return timeService;
+        return metaService;
 
         function testService() {
-            $log.debug('timeService - testService ran!');
+            $log.debug('metaService - testService ran!');
         }
 
-        function getLastStreamUpdateTime() {
-            return $http.post('')
+        function getLastStreamUpdateTime(url) {
+            return $http.get(url)
                 .then(function (result) {
                     return result;
                 });

@@ -28,6 +28,15 @@ namespace corev3
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
+            services.AddCors(o =>
+            {
+                o.AddPolicy("AllowFromAll",
+                  builder => builder
+                   .AllowAnyMethod()
+                   .AllowAnyOrigin()
+                   .AllowAnyHeader());
+            });
+            // Add framework services.
             services.AddMvc();
         }
 
@@ -37,6 +46,7 @@ namespace corev3
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
+            app.UseCors("AllowFromAll");
             app.UseMvc();
         }
     }

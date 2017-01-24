@@ -12,7 +12,7 @@
     <script type="text/javascript" src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/lib-custom/js/app.js"></script>
-    <script type="text/javascript" src="/lib-custom/js/timeService.js"></script>
+    <script type="text/javascript" src="/lib-custom/js/metaService.js"></script>
     <script type="text/javascript" src="/lib-custom/js/statusController.js"></script>
     <script type="text/javascript" src="/lib-custom/js/metricsController.js"></script>
 </head>
@@ -27,8 +27,8 @@
                         </a>
                     </div>
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="/#/status">Status Stream</a></li>
-                        <li><a href="/#/metrics">Metrics Stream</a></li>
+                        <li class="active"><a href="/">Status Stream</a></li>
+                        <li><a href="/metrics">Metrics Stream</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a><b>Metrics Last Updated</b> {{ metricsLastUpdateDateTime }}</a></li>
