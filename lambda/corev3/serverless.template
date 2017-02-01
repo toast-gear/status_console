@@ -1,7 +1,6 @@
 {
   "AWSTemplateFormatVersion" : "2010-09-09",
   "Transform" : "AWS::Serverless-2016-10-31",
-  "Description" : "Starting template for an AWS Serverless Application.",
   "Parameters" : {
   },
   "Resources" : {
@@ -11,7 +10,6 @@
         "Handler": "corev3::corev3.LambdaFunctions::FunctionHandlerAsync",
         "Runtime": "dotnetcore1.0",
         "CodeUri": "",
-        "Description": "Default function",
         "MemorySize": 128,
         "Timeout": 30,
         "Role": null,

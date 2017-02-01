@@ -15,40 +15,22 @@
     </div>
 </div>
 <div id="status-history-panel" class="row">
-    <div class="col-xs-12">
-        <b>2016-10-11</b>
-        <hr />
-        <div class="col-xs-3" style="padding:0px;">
-            2016-10-12 18:12:02.000 +000
-        </div>
-        <div class="col-xs-9" style="padding:0px;">
-            <div class="status-message-good">
-                THIS IS CONTENT THIS IS CONTENT THIS IS CONTENT THIS IS CONTENT THIS IS CONTENT THIS IS CONTENT THIS IS CONTENT THIS IS CONTENT THIS IS CONTENT 
+    <div ng-repeat="value in streamData">
+        <div class="col-xs-12">
+            <b>{{ value.createdDateTime | date:'yyyy-dd-MM' }}</b>
+            <hr />
+            <div class="col-xs-3" style="padding-top:0px;padding-left:0px;padding-right:0px;padding-bottom:25px;">
+                {{ value.createdDateTime }}
+            </div>
+            <div class="col-xs-9" style="padding-top:0px;padding-left:0px;padding-right:0px;padding-bottom:25px;">
+                <div Class="ng-class:value.messageClass">
+                    {{ value.message }}
+                </div>
+                <!--<div class="status-message-good">
+                    
+                </div>
+                -->
             </div>
         </div>
     </div>
-    <div class="col-xs-12">
-        <b>2016-10-11</b>
-        <hr />
-        <div class="col-xs-3" style="padding:0px;">
-            2016-10-12 18:12:02.000 +000
-        </div>
-        <div class="col-xs-9" style="padding:0px;">
-            <div class="status-message-minor">
-                THIS IS CONTENT THIS IS CONTENT THIS IS CONTENT THIS IS CONTENT THIS IS CONTENT THIS IS CONTENT THIS IS CONTENT THIS IS CONTENT THIS IS CONTENT 
-            </div>
-        </div>
-    </div>
-    <div class="col-xs-12">
-        <b>2016-10-11</b>
-        <hr />
-        <div class="col-xs-3" style="padding:0px;">
-            2016-10-12 18:12:02.000 +000
-        </div>
-        <div class="col-xs-9" style="padding:0px;">
-            <div class="status-message-major">
-                THIS IS CONTENT THIS IS CONTENT THIS IS CONTENT THIS IS CONTENT THIS IS CONTENT THIS IS CONTENT THIS IS CONTENT THIS IS CONTENT THIS IS CONTENT 
-            </div>
-        </div>
-    </div>        
 </div>

@@ -1,4 +1,4 @@
-﻿{
+{
   "dependencies": {
     "Microsoft.NETCore.App": {
       "version": "1.0.0",
@@ -14,17 +14,15 @@
     "Microsoft.Extensions.Logging.Console": "1.0.0",
     "Microsoft.Extensions.Logging.Debug": "1.0.0",
     "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
-
     "AWSSDK.Core": "3.3.5",
     "AWSSDK.Extensions.NETCore.Setup": "3.3.0.2",
     "AWSSDK.DynamoDBv2": "3.3.1",
-
     "Amazon.Lambda.AspNetCoreServer": "0.8.0-preview1",
-
     "Amazon.Lambda.Tools": {
       "type": "build",
       "version": "1.1.0-preview1"
-    }
+    },
+    "MySql.Data": "7.0.6-IR31"
   },
 
   "tools": {

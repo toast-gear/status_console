@@ -11,7 +11,7 @@ namespace corev3.Controllers
     [Route("api/[controller]")]
     public class MetaController : Controller
     {
-        [Route("localservertime")]
+        [Route("getlocalservertime")]
         [HttpGet]
         public string GetServerLocalTime()
         {
