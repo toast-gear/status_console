@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using corev3.Models;
 using corev3.Repositories;
+using System.Net.Http;
+using System.Web.Http;
+using System.Net;
 
 namespace corev3.Controllers
 {
@@ -15,8 +18,19 @@ namespace corev3.Controllers
         [HttpGet]
         public List<StatusStreamMessage> GetStatusStreamMessages()
         {
-            MySqlRepository MySqlRepo = new MySqlRepository();
-            return MySqlRepo.GetStatusStreamMessages();
+            try
+            {
+                MySqlRepository MySqlRepo = new MySqlRepository();
+                return MySqlRepo.GetStatusStreamMessages();
+            }
+            catch (Exception ex)
+            {
+                var message = new HttpResponseMessage(HttpStatusCode.InternalServerError)
+                {
+                    ReasonPhrase = ex.Message
+                };
+                throw new HttpResponseException(message);
+            }
         }
     }
 }
