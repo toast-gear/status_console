@@ -1,0 +1,10 @@
+﻿/* Use like this - <div class="menu-spacer-small"></div> */
+.menu-spacer-small{
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.menu-spacer-extra-small{
+    margin-top: 45px;
+    margin-bottom: 20px;
+}
