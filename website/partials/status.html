@@ -15,7 +15,7 @@
     </div>
 </div>
 <div id="status-history-panel" class="row">
-    <div ng-repeat="value in streamData">
+    <div ng-repeat="value in streamData | orderBy:'-createdDateTime'">
         <div class="col-xs-12">
             <b>{{ value.createdDateTime | date:'yyyy-dd-MM' }}</b>
             <hr />
@@ -28,5 +28,13 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+<div id="status-panel" class="row">
+    <div class="col-md-6">
+        <button id="ShowMoreDaysButton" type="button" class="btn btn-default btn-block" ng-click="loadMoreDays()">More</button>
+    </div>
+    <div class="col-md-6">
+        <button id="ShowFewerDaysButton" type="button" class="btn btn-default btn-block" ng-click="loadFewerDays()">Fewer</button>
     </div>
 </div>

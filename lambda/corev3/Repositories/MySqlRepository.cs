@@ -12,7 +12,7 @@ namespace corev3.Repositories
 {
     public class MySqlRepository
     {
-        public List<StatusStreamMessage> GetStatusStreamMessages()
+        public List<StatusStreamMessage> GetStatusStreamMessages(int NumberOfDays)
         {
             List<StatusStreamMessage> MessageList = new List<StatusStreamMessage>();
             string ConnectionString = String.Format("server={0};user={1};database={2};port={3};password={4};", DatabaseConstants.URL, DatabaseConstants.UserName, DatabaseConstants.Database, Convert.ToString(DatabaseConstants.Port), DatabaseConstants.Password);
@@ -36,10 +36,11 @@ namespace corev3.Repositories
                 StatusStreamMessage.Message = Convert.ToString(Data[3]);
                 MessageList.Add(StatusStreamMessage);
             }
-            Data.Close();
 
+            Data.Close();
             Connection.Close();
-            return MessageList;
+            StatusStreamRepository StatusStreamRepo = new StatusStreamRepository();
+            return StatusStreamRepo.ProcessStatusStreamMessagesByDays(MessageList, NumberOfDays);
         }
     }
 }

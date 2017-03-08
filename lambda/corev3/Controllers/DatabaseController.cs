@@ -16,12 +16,13 @@ namespace corev3.Controllers
     {
         [Route("getstatusstreammessages")]
         [HttpGet]
-        public List<StatusStreamMessage> GetStatusStreamMessages()
+        // Query String
+        public List<StatusStreamMessage> GetStatusStreamMessages([FromUri]int NumberOfDays)
         {
             try
             {
                 MySqlRepository MySqlRepo = new MySqlRepository();
-                return MySqlRepo.GetStatusStreamMessages();
+                return MySqlRepo.GetStatusStreamMessages(NumberOfDays);
             }
             catch (Exception ex)
             {
