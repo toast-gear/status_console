@@ -35,26 +35,26 @@
                 });
 
             $scope.loadMoreDays = function () {
-                $log.info('loadMoreDays event entered')
-                    var currentValue = localStoreService.getLocalStorageKeyValue('numberOfStatusStreamDays')
-                    localStorageService.set('numberOfStatusStreamDays', currentValue + 30);
-                    databaseService.getStatusStreamMessages(baseUrl + '/api/database/getstatusstreammessages' + '?NumberOfDays=' + localStoreService.getLocalStorageKeyValue('numberOfStatusStreamDays'))
-                                    .then(function (response) {
-                                        $log.info('response date : ', response);
-                                        $rootScope.streamData = response.data;
-                                    })
-            }
+                $log.info('loadMoreDays event entered');
+                var currentValue = localStoreService.getLocalStorageKeyValue('numberOfStatusStreamDays');
+                localStorageService.set('numberOfStatusStreamDays', currentValue + 30);
+                databaseService.getStatusStreamMessages(baseUrl + '/api/database/getstatusstreammessages' + '?NumberOfDays=' + localStoreService.getLocalStorageKeyValue('numberOfStatusStreamDays'))
+                                .then(function (response) {
+                                    $log.info('response date : ', response);
+                                    $rootScope.streamData = response.data;
+                                });
+            };
             $scope.loadFewerDays = function () {
-                $log.info('loadFewerDays event entered')
+                $log.info('loadFewerDays event entered');
                 if (localStoreService.getLocalStorageKeyValue('numberOfStatusStreamDays') > 0) {
-                    var currentValue = localStoreService.getLocalStorageKeyValue('numberOfStatusStreamDays')
+                    var currentValue = localStoreService.getLocalStorageKeyValue('numberOfStatusStreamDays');
                     localStorageService.set('numberOfStatusStreamDays', currentValue - 30);
                     databaseService.getStatusStreamMessages(baseUrl + '/api/database/getstatusstreammessages' + '?NumberOfDays=' + localStoreService.getLocalStorageKeyValue('numberOfStatusStreamDays'))
                                     .then(function (response) {
                                         $log.info('response date : ', response);
                                         $rootScope.streamData = response.data;
-                                    })
+                                    });
                 }
-            }
+            };
         });
 })();

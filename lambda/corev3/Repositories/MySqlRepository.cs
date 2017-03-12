@@ -12,7 +12,7 @@ namespace corev3.Repositories
 {
     public class MySqlRepository
     {
-        public List<StatusStreamMessage> GetStatusStreamMessages(int NumberOfDays)
+        public List<List<StatusStreamMessage>> GetStatusStreamMessages(int NumberOfDays)
         {
             List<StatusStreamMessage> MessageList = new List<StatusStreamMessage>();
             string ConnectionString = String.Format("server={0};user={1};database={2};port={3};password={4};", DatabaseConstants.URL, DatabaseConstants.UserName, DatabaseConstants.Database, Convert.ToString(DatabaseConstants.Port), DatabaseConstants.Password);
@@ -21,9 +21,10 @@ namespace corev3.Repositories
             Connection.Open();
 
             string Query = "get_status_stream_messages_by_solution";
-            MySqlCommand Command = new MySqlCommand(Query, Connection);
-            Command.CommandType = CommandType.StoredProcedure;
-
+            MySqlCommand Command = new MySqlCommand(Query, Connection)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
             Command.Parameters.AddWithValue("@solution_id", "1");
 
             MySqlDataReader Data = Command.ExecuteReader();

@@ -17,7 +17,7 @@ namespace corev3.Controllers
         [Route("getstatusstreammessages")]
         [HttpGet]
         // Query String
-        public List<StatusStreamMessage> GetStatusStreamMessages([FromUri]int NumberOfDays)
+        public List<List<StatusStreamMessage>> GetStatusStreamMessages([FromUri]int NumberOfDays)
         {
             try
             {
