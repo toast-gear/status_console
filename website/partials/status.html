@@ -1,7 +1,11 @@
 <div id="status-panel" class="row">
     <div class="col-md-12">
-        <div class="panel panel-success">
-            <div class="panel-body panel-success">All systems are operational</div>
+        <div ng-class="{ 'panel panel-success': currentStatus.messageClass === 'status-message-good', 'panel panel-warning': currentStatus.messageClass === 'status-message-minor', 'panel panel-danger': currentStatus.messageClass === 'status-message-major' }">
+            <div ng-switch on="currentStatus.messageClass">
+                <div ng-switch-when="status-message-good" class="panel-body panel-success">All systems are operational</div>
+                <div ng-switch-when="status-message-minor" class="panel-body panel-warning">Some opeartional issues are currently active, expect reduced service.</div>
+                <div ng-switch-when="status-message-major" class="panel-body panel-danger">Major opeartional issues are currently active, expect reduced / no service.</div>
+            </div>
         </div>
     </div>
 </div>

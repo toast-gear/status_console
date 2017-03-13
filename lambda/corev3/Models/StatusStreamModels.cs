@@ -7,7 +7,7 @@ namespace corev3.Models
 {
     public class StatusStreamMessage
     {
-        public int solution_Id { get; set; }
+        public int SolutionId { get; set; }
         public DateTime CreatedDateTime { get; set; }
         public string MessageClass { get; set; }
         public string Message { get; set; }

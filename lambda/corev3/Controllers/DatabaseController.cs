@@ -33,5 +33,23 @@ namespace corev3.Controllers
                 throw new HttpResponseException(message);
             }
         }
+        [Route("getlateststatusmessage")]
+        [HttpGet]
+        public StatusStreamMessage GetLatestStatusMessage()
+        {
+            try
+            {
+                MySqlRepository MySqlRepo = new MySqlRepository();
+                return MySqlRepo.GetLatestStatusMessage();
+            }
+            catch (Exception ex)
+            {
+                var message = new HttpResponseMessage(HttpStatusCode.InternalServerError)
+                {
+                    ReasonPhrase = ex.Message
+                };
+                throw new HttpResponseException(message);
+            }
+        }
     }
 }
