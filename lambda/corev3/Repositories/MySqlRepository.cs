@@ -26,6 +26,7 @@ namespace corev3.Repositories
                 CommandType = CommandType.StoredProcedure
             };
             Command.Parameters.AddWithValue("@solution_id", "1");
+            Command.Parameters.AddWithValue("@subtract_days", NumberOfDays);
 
             MySqlDataReader Data = Command.ExecuteReader();
             while (Data.Read())
