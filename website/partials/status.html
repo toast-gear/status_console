@@ -13,7 +13,7 @@
     </div>
 </div>
 <div id="status-history-panel" class="row">
-    <div ng-repeat="month in streamData | orderBy:'+'">">
+    <div ng-repeat="month in streamData">
         <div class="col-xs-12">
             <div style="margin-top:20px;">
                 <b>{{ month[0].createdDateTime | date:'yyyy-MM-dd' }}</b>
