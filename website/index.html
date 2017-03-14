@@ -1,9 +1,11 @@
 ﻿<!DOCTYPE html>
 <html ng-app="statusApp">
 <head>
-    <title>Status Console</title>
     <base href="/">
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Status Console</title>
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/lib-custom/css/global.css" />
     <link rel="stylesheet" href="/lib-custom/css/global-tools.css" />
@@ -25,17 +27,25 @@
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-navbar" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
                         <a class="navbar-brand">
-                            <img src="http://res.cloudinary.com/candidbusiness/image/upload/v1455406304/dispute-bills-chicago.png" >
+                            <img src="http://res.cloudinary.com/candidbusiness/image/upload/v1455406304/dispute-bills-chicago.png">
                         </a>
                     </div>
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="/">Status Stream</a></li>
-                        <li><a href="/metrics">Metrics Stream</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a><b>Metrics Last Updated</b> {{ metricsLastUpdateDateTime }}</a></li>
-                    </ul>                        
+                    <div class="collapse navbar-collapse" id="collapse-navbar">
+                        <ul class="nav navbar-nav">
+                            <li><a href="/">Status Stream</a></li>
+                            <li><a href="/metrics">Metrics Stream</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a><b>Metrics Last Updated</b> {{ metricsLastUpdateDateTime }}</a></li>
+                        </ul>
+                    </div>
                 </div>
             </nav>
             <main ui-view=""></main>
