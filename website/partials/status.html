@@ -24,19 +24,18 @@
                 <hr />
             </div>
             <div ng-repeat="row in month | orderBy:'-createdDateTime'">
-                <div class="col-md-3" style="padding-top:0px;padding-left:0px;padding-right:0px;padding-bottom:0px;">
-                    {{ row.createdDateTime }}
-                </div>
-                <div class="col-md-9" style="padding-top:0px;padding-left:0px;padding-right:0px;padding-bottom:0px;">
-                    <div Class="ng-class:row.messageClass">
-                        {{ row.message }}
+                    <div class="col-md-3" style="padding-top:0px;padding-left:0px;padding-right:0px;padding-bottom:0px;">
+                        {{ row.createdDateTime }}
                     </div>
-                </div>
+                    <div class="col-md-9" style="padding-top:0px;padding-left:0px;padding-right:0px;padding-bottom:0px;">
+                        <div Class="ng-class:row.messageClass">
+                            {{ row.message }}
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
 </div>
-<div class="menu-spacer-small"></div>
 <div id="status-panel" class="row">
     <div class="col-md-6">
         <button id="ShowMoreDaysButton" type="button" class="btn btn-default btn-block" ng-click="loadMoreDays()">More</button>
