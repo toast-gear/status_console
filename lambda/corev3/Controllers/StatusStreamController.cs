@@ -21,8 +21,8 @@ namespace corev3.Controllers
         {
             try
             {
-                MySqlRepository MySqlRepo = new MySqlRepository();
-                return MySqlRepo.GetStatusStreamMessages(NumberOfDays);
+                StatusStreamRepository StatusStreamRepo = new StatusStreamRepository();
+                return StatusStreamRepo.GetStatusStreamMessages(NumberOfDays);
             }
             catch (Exception ex)
             {
@@ -39,8 +39,8 @@ namespace corev3.Controllers
         {
             try
             {
-                MySqlRepository MySqlRepo = new MySqlRepository();
-                return MySqlRepo.GetLatestStatusMessage();
+                StatusStreamRepository StatusStreamRepo = new StatusStreamRepository();
+                return StatusStreamRepo.GetLatestStatusMessage();
             }
             catch (Exception ex)
             {
