@@ -12,7 +12,7 @@ using System.Net;
 namespace corev3.Controllers
 {
     [Route("api/[controller]")]
-    public class DatabaseController : Controller
+    public class StatusStreamController : Controller
     {
         [Route("getstatusstreammessages")]
         [HttpGet]
