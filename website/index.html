@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/lib-custom/css/global.css" />
     <link rel="stylesheet" href="/lib-custom/css/global-tools.css" />
     <link rel="stylesheet" href="/lib-custom/css/status-page.css" />
+    <link rel="stylesheet" href="/lib-custom/css/ideas-page.css" />
     <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
     <script type="text/javascript" src="/bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
@@ -20,11 +21,12 @@
     <script type="text/javascript" src="/lib-custom/js/localStoreService.js"></script>
     <script type="text/javascript" src="/lib-custom/js/statusController.js"></script>
     <script type="text/javascript" src="/lib-custom/js/metricsController.js"></script>
+    <script type="text/javascript" src="/lib-custom/js/ideasController.js"></script>
 </head>
 <body>
     <div class="container">
         <div class="global-partial-container">
-            <nav class="navbar navbar-default">
+            <nav class="navbar navbar-default container-aligner">
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-navbar" aria-expanded="false">
@@ -40,7 +42,8 @@
                     <div class="collapse navbar-collapse" id="collapse-navbar">
                         <ul class="nav navbar-nav">
                             <li><a href="/">Status Stream</a></li>
-                            <li><a href="/metrics">Metrics Stream</a></li>
+                            <li><a href="/#!/metrics">Metrics Stream</a></li>
+                            <li><a href="/#!/ideas">Ideas Stream</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li><a><b>Metrics Last Updated</b> {{ metricsLastUpdateDateTime }}</a></li>

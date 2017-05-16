@@ -11,6 +11,10 @@
                     url: '/metrics',
                     templateUrl: '/partials/metrics.html',
                     controller: 'metricsController as metricsController'
+                }).state('ideas', {
+                    url: '/ideas',
+                    templateUrl: '/partials/ideas.html',
+                    controller: 'ideasController as ideasController'
                 });
             $locationProvider.html5Mode(true);
         })

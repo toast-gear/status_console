@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Hosting;
+﻿using System.IO;
 using Microsoft.AspNetCore.Builder;
-using Amazon.DynamoDBv2;
+using Microsoft.AspNetCore.Hosting;
 
-namespace corev3
+namespace api
 {
     public class Program
     {
@@ -18,7 +13,9 @@ namespace corev3
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
+                .UseApplicationInsights()
                 .Build();
+
             host.Run();
         }
     }

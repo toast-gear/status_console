@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using corev3.Models;
+using api.Models;
 using MySql.Data.MySqlClient;
 using System.Data;
-using corev3.Constants;
+using api.Constants;
 
-namespace corev3.Repositories
+namespace api.Repositories
 {
     public class StatusStreamRepository
     {

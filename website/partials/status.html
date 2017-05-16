@@ -1,5 +1,5 @@
-<div id="status-panel" class="row">
-    <div class="col-md-12">
+<div class="container-aligner">
+    <div id="status-panel">
         <div ng-class="{ 'panel panel-success': currentStatus.messageClass === 'status-message-good', 'panel panel-warning': currentStatus.messageClass === 'status-message-minor', 'panel panel-danger': currentStatus.messageClass === 'status-message-major' }">
             <div ng-switch on="currentStatus.messageClass">
                 <div ng-switch-when="status-message-good" class="panel-body panel-success">All systems are operational</div>
@@ -8,39 +8,37 @@
             </div>
         </div>
     </div>
-</div>
-<div id="information-panel" class="row">
-    <div class="col-md-12">
-        <b>What is this site?</b>
-        <hr />
-        This is a status page to learn AngularJS and serverless architecture. The site continuously monitors a service which generates fake data to show in the metrics screen.
-    </div>
-</div>
-<div id="status-history-panel" class="row">
-    <div ng-repeat="month in streamData">
-        <div class="col-lg-12">
-            <div style="margin-top:20px;">
-                <b>{{ month[0].createdDateTime | date:'yyyy-MM-dd' }}</b>
-                <hr />
-            </div>
+    <!-- <div id="information-panel">
+        <div style="padding-bottom:15px;">
+            <b>What is this site?</b>
+            <hr />
+            This is a status page to learn AngularJS and serverless architecture. The site continuously monitors a service which generates fake data to show in the metrics screen.
+        </div>
+    </div> -->
+    <div id="status-history-panel">
+        <b>Stream</b>
+        <hr id="StreamHrTag" />
+        <div ng-repeat="month in streamData" class="row">
+            <br />
+            <b>{{ month[0].createdDateTime | date:'yyyy-MM-dd' }}</b>
             <div ng-repeat="row in month | orderBy:'-createdDateTime'">
-                    <div class="col-md-3" style="padding-top:0px;padding-left:0px;padding-right:0px;padding-bottom:0px;">
-                        {{ row.createdDateTime }}
+                <div class="col-md-2" style="padding-left:0px;padding-right:0px;">
+                    {{ row.createdDateTime }}
+                </div>
+                <div class="col-md-10" style="padding-left:0px;padding-right:0px;">
+                    <div Class="ng-class:row.messageClass">
+                        {{ row.message }}
                     </div>
-                    <div class="col-md-9" style="padding-top:0px;padding-left:0px;padding-right:0px;padding-bottom:0px;">
-                        <div Class="ng-class:row.messageClass">
-                            {{ row.message }}
-                        </div>
-                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<div id="status-panel" class="row">
+<div id="data-control-panel">
     <div class="col-md-6">
-        <button id="ShowMoreDaysButton" type="button" class="btn btn-default btn-block" ng-click="loadMoreDays()">More</button>
+        <button id="ShowMoreDaysButton" type="button" class="btn btn-default btn-block" ng-click="loadMoreDays()">+ 30 Days</button>
     </div>
     <div class="col-md-6">
-        <button id="ShowFewerDaysButton" type="button" class="btn btn-default btn-block" ng-click="loadFewerDays()">Fewer</button>
+        <button id="ShowFewerDaysButton" type="button" class="btn btn-default btn-block" ng-click="loadFewerDays()">- 30 Days</button>
     </div>
 </div>

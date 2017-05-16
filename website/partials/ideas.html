@@ -1,0 +1,27 @@
+﻿<div class="container-aligner">
+    <div class="col-12">
+        <select class="form-control" style="width:100%;margin-bottom:20px;" ng-options="option.name for option in data.filterOptionsModel track by option.id" ng-model="data.selectedFilterOptionModel" ng-click="filterClicked()"></select>
+    </div>
+    <div id="ideas-history-panel" class="row">
+        <div ng-repeat="idea in ideasData">
+            <div class="panel panel-default" >
+                <div class="panel-body" >
+                    <div class="col-md-2" style="padding-left:0px;padding-right:0px;">
+                        +90000
+                    </div>
+                    <div class="col-md-10" style="padding-left:0px;padding-right:0px;">
+                        {{ idea.ideaText }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="ideas-data-control-panel">
+    <div class="col-md-6">
+        <button id="ShowMoreRecordsButton" type="button" class="btn btn-default btn-block" ng-click="loadMoreData()">+ 1 Day</button>
+    </div>
+    <div class="col-md-6">
+        <button id="ShowFewerRecordsButton" type="button" class="btn btn-default btn-block" ng-click="loadLessData()">- 1 Day</button>
+    </div>
+</div>

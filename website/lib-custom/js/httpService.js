@@ -5,6 +5,8 @@
 
     httpService.$inject = ['$http', '$log'];
 
+    var baseUrl = '';
+
     function httpService($http, $log) {
         var httpService = {
             testService: testService,
@@ -18,9 +20,14 @@
         }
 
         function invokeHttpGetRequest(url) {
-            return $http.get(url)
+            return $http.get(baseUrl + url)
                 .then(function (result) {
                     return result;
+                })
+                .catch(function (response) {
+                    $log.error('Exception on GET request');
+                    $log.error(baseUrl + url);
+                    $log.error(response);
                 });
         }
     }

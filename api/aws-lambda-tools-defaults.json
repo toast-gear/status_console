@@ -1,0 +1,14 @@
+
+{
+    "profile" : "Root",
+    "region"  : "eu-west-1",
+    "configuration" : "Release",
+    "framework"     : "netcoreapp1.0",
+    "function-runtime" : "dotnetcore1.0",
+    "function-memory-size" : 128,
+    "function-timeout"     : 30,
+    "function-handler"     : "api::api.LambdaFunction::FunctionHandlerAsync",
+    "function-name"        : "lion-api-test-DefaultFunction-72SLKBJ1CZSB",
+    "function-role"        : "arn:aws:iam::727831675029:role/lion-api-test-DefaultFunctionRole-1AF1DD9FZPAWH",
+    "environment-variables" : ""
+}

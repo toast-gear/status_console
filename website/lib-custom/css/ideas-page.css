@@ -1,0 +1,15 @@
+﻿@media screen and (max-width: 1007px) {
+    #ShowMoreRecordsButton {
+        margin-bottom: 20px;
+    }
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+hr {
+    margin-top: 1px;
+    margin-bottom: 1px;
+}

@@ -36,11 +36,6 @@
     }
 }
 
-hr {
-    margin-top:10px;
-    margin-bottom: 25px;
-}
-
 .container {
     margin-top: 20px;
 }
@@ -54,9 +49,15 @@ hr {
   width: auto;
 }
 
+/* Sets the width of the site */
 .global-partial-container {
     max-width: 900px;
     margin:0 auto;
+}
+
+/* Sets the general style of lines as we are using them as part of headers */
+hr {
+    margin-top: 15px;
 }
 
 .panel-success {
@@ -99,4 +100,10 @@ hr {
 
 .status-panel {
     margin-bottom:45px;
+}
+
+/* Used to bring everything inline with Bootstrap columns on the edges */
+.container-aligner {
+    margin-left: 15px;
+    margin-right: 15px;
 }

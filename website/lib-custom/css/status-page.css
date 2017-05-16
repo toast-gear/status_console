@@ -4,7 +4,21 @@
     }
 }
 
-#status-history-panel {
+@media screen and (max-width: 1007px) {
+    br {
+        display:block;
+    }
+}
+
+#data-control-panel {
     margin-top: 20px;
-    margin-bottom: 20px;
+}
+
+#StreamHrTag {
+    margin-bottom: 0px;
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
 }
