@@ -5,17 +5,14 @@ using System.Threading.Tasks;
 using api.Models;
 using MySql.Data.MySqlClient;
 using System.Data;
-using api.Constants;
 
 namespace api.Repositories
 {
     public class StatusStreamRepository
     {
-
-        public List<List<StatusStreamMessage>> GetStatusStreamMessages(int NumberOfDays)
+        public List<List<StatusStreamMessage>> GetStatusStreamMessages(int NumberOfDays, string ConnectionString)
         {
             List<StatusStreamMessage> MessageList = new List<StatusStreamMessage>();
-            string ConnectionString = String.Format("server={0};user={1};database={2};port={3};password={4};", DatabaseConstants.URL, DatabaseConstants.UserName, DatabaseConstants.Database, Convert.ToString(DatabaseConstants.Port), DatabaseConstants.Password);
             MySqlConnection Connection = new MySqlConnection(ConnectionString);
 
             Connection.Open();
@@ -43,10 +40,9 @@ namespace api.Repositories
             Connection.Close();
             return ProcessStatusStreamMessagesByDays(MessageList, NumberOfDays);
         }
-        public StatusStreamMessage GetLatestStatusMessage()
+        public StatusStreamMessage GetLatestStatusMessage(string ConnectionString)
         {
             List<StatusStreamMessage> MessageList = new List<StatusStreamMessage>();
-            string ConnectionString = String.Format("server={0};user={1};database={2};port={3};password={4};", DatabaseConstants.URL, DatabaseConstants.UserName, DatabaseConstants.Database, Convert.ToString(DatabaseConstants.Port), DatabaseConstants.Password);
             MySqlConnection Connection = new MySqlConnection(ConnectionString);
 
             Connection.Open();

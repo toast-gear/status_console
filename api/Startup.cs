@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using api.Models;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -33,6 +34,7 @@ namespace api
                    .AllowAnyHeader());
             });
             // Add framework services.
+            services.Configure<DatabaseConfig>(Configuration.GetSection("Data"));
             services.AddMvc();
         }
 

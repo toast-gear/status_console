@@ -24,7 +24,9 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "website", "website\", "{349
 		SlnRelativePath = "website\"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "api", "api\api.csproj", "{2E6D2B85-55C1-4B57-BB61-E262D03FDEDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api", "api\api.csproj", "{2E6D2B85-55C1-4B57-BB61-E262D03FDEDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "build", "build\build.csproj", "{38A1D765-0D07-4011-A856-77DADD936056}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,6 +42,10 @@ Global
 		{2E6D2B85-55C1-4B57-BB61-E262D03FDEDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E6D2B85-55C1-4B57-BB61-E262D03FDEDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E6D2B85-55C1-4B57-BB61-E262D03FDEDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38A1D765-0D07-4011-A856-77DADD936056}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38A1D765-0D07-4011-A856-77DADD936056}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38A1D765-0D07-4011-A856-77DADD936056}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38A1D765-0D07-4011-A856-77DADD936056}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
