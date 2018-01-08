@@ -23,7 +23,7 @@ namespace api.Controllers
         {
             string ConnectionString = _config.Value.ConnectionString;
             IdeasRepository IdeasRepo = new IdeasRepository();
-            return IdeasRepo.GetIdeasByCountBySolution(NumberOfItems, SolutonId);
+            return IdeasRepo.GetIdeasByCountBySolution(NumberOfItems, SolutonId, ConnectionString);
         }
     }
 }

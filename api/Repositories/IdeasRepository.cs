@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using api.Models;
 using MySql.Data.MySqlClient;
-using api.Constants;
 using System.Data;
 
 namespace api.Repositories
 {
     public class IdeasRepository
     {
-        public List<IdeaModel> GetIdeasByCountBySolution(int NumberOfIdeas, int SolutionId)
+
+        public List<IdeaModel> GetIdeasByCountBySolution(int NumberOfIdeas, int SolutionId, string ConnectionString)
         {
             List<IdeaModel> IdeasList = new List<IdeaModel>();
-            string ConnectionString = String.Format("server={0};user={1};database={2};port={3};password={4};", DatabaseConstants.URL, DatabaseConstants.UserName, DatabaseConstants.Database, Convert.ToString(DatabaseConstants.Port), DatabaseConstants.Password);
             MySqlConnection Connection = new MySqlConnection(ConnectionString);
 
             Connection.Open();
